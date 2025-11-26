@@ -208,7 +208,7 @@ pred_holdout<-final_holdout_test%>%
 pred_holdout<-pred_holdout %>%
   mutate(pred=pmin(pmax(pred, 0.5), 5))
 
-rmse_holdout< RMSE(pred_holdout$rating, pred_holdout$pred)
+rmse_holdout<-RMSE(pred_holdout$rating, pred_holdout$pred)
 cat("Final Holdout RMSE:", rmse_holdout, "\n")
 
 
@@ -222,3 +222,4 @@ best_movies<-b_i%>%
   slice_head(n=5)
 
 best_movies
+
